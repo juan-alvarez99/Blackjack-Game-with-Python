@@ -1,3 +1,32 @@
+"""
+Portfolio Repository
+Created by: Juan Alvarez
+Date: 04.12.2022
+Github: https://github.com/juan-alvarez99
+Linkedin: https://www.linkedin.com/in/juan-alv/
+========================================================================================================
+========================================================================================================
+This project consists in a simple version of the Atlanta Classic Blackjack using Python basic programming
+This are the rules:
+    - user vs computer: the player that gets closer to 21 points wins
+    - J, Q and K score 10 points
+    - A can score 11 points if the total points in someone's hand is less or equal to 21, otherwise it scores 1 point
+    - The rest of the deck score as many points as the number of the card (2=2, 3=3,..., 10=10)
+    - In this casino we use several decks to avoid card-counting: the probability of dealing a certain card is always the same, no matter how many times had it been dealed before
+    - Firstly, two cards are dealed to each player, the user can only see the first card of the computer's hand
+    - The user can ask to be dealed as many cards as he wants to increase his/her hand
+    - If the user goes over 21, the game is over, regardless of what the computer has
+    - When the user has finished is computer's turn. 
+    - The computer is only going to ask for another card when it's below 17 points
+    - BLACKJACK: is the best hand of the game. It can only be score with the first two cards dealed at the beginning of the game. This cards should be: A + (10/J/Q/K)
+
+Did you like it? You can play as many times as you want!
+Enjoy!
+
+========================================================================================================
+========================================================================================================
+"""
+
 import random
 from art import logo
 from art import ascii_cards
@@ -39,7 +68,7 @@ def count_hand_value(hand):
 
     # If the value exceeds 21, aces worth 1 point instead of 11
     if value > 21:
-        value -= 10*hand.count(11)
+        value -= 10*hand.count('A')
 
     # If the hand is a Blackjack return 0
     elif len(hand) == 2 and value == 21:
